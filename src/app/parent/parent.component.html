@@ -1,0 +1,9 @@
+<app-child
+  [warningGroups]="warnsGroups$ | async"
+  (action)="makeRequestAndHandle()"
+></app-child>
+
+<ng-template #warn1 let-warning>{{ warning.data }}</ng-template>
+<ng-template #warn2 let-warning>
+  [{{ warning.code }}]: {{ warning.title }}
+</ng-template>

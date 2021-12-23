@@ -1,0 +1,14 @@
+<p>child works!</p>
+<button (click)="performAction()">Perform Action</button>
+
+<ng-container *ngIf="warningGroups">
+  <ul *ngFor="let group of warningGroups">
+    <li *ngFor="let warning of group.warnings">
+      <ng-container
+        [ngTemplateOutlet]="group.template"
+        [ngTemplateOutletContext]="{ $implicit: warning }"
+      >
+      </ng-container>
+    </li>
+  </ul>
+</ng-container>
